@@ -1,34 +1,24 @@
-import React from 'react'
+import { useState } from "react"
 import CardFront from "./CardFront"
 import CardBack from "./CardBack"
-import ReactCardFlip from 'react-card-flip'
+import ReactCardFlip from "react-card-flip"
 
-export default class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isFlipped: false
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
+export default function CardContainer(props) {
 
-  handleClick(e) {
-    e.preventDefault();
-    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
-  }
+  const [isFlipped, setIsFlipped] = useState(false)
 
-  render() {
-    return (
-      <div className="card-flip">
-        <div className="card-flip-inner">
-          <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="vertical">
-            <CardBack handleClick={this.handleClick} >
-            </CardBack>
-            <CardFront handleClick={this.handleClick} >
-            </CardFront>
-          </ReactCardFlip>
-        </div>
+  const handleClick = (event) => setIsFlipped(!isFlipped)
+
+  return (
+    <div className="card-flip">
+      <div className="card-flip-inner">
+        <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
+          <CardBack handleClick={handleClick} >
+          </CardBack>
+          <CardFront card={props.card} handleClick={handleClick} >
+          </CardFront>
+        </ReactCardFlip>
       </div>
-    )
-  }
+    </div>
+  )
 }

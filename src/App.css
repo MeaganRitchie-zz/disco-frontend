@@ -1,33 +1,33 @@
 @font-face {
-    font-family: 'stay_homeregular';
-    src: url("./components/fonts/stay_home-webfont.woff") format("woff"),
-    url("./components/fonts/stay_home-webfont.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'stay_homeregular';
+  src: url("./components/fonts/stay_home-webfont.woff") format("woff"),
+  url("./components/fonts/stay_home-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'kg_neatly_printed_spacedRg';
-    src: url('./components/fonts/kgneatlyprintedspaced-webfont.woff2') format('woff2'),
-         url('./components/fonts/kgneatlyprintedspaced-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'kg_neatly_printed_spacedRg';
+  src: url('./components/fonts/kgneatlyprintedspaced-webfont.woff2') format('woff2'),
+        url('./components/fonts/kgneatlyprintedspaced-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'kg_summer_sunshine_shadowRg';
-    src: url('./components/fonts/kgsummersunshineshadow-webfont.woff2') format('woff2'),
-         url('./components/fonts/kgsummersunshineshadow-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'kg_summer_sunshine_shadowRg';
+  src: url('./components/fonts/kgsummersunshineshadow-webfont.woff2') format('woff2'),
+        url('./components/fonts/kgsummersunshineshadow-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'kg_all_of_the_starsregular';
-    src: url('./components/fonts/kgallofthestars-webfont.woff2') format('woff2'),
-         url('./components/fonts/kgallofthestars-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'kg_all_of_the_starsregular';
+  src: url('./components/fonts/kgallofthestars-webfont.woff2') format('woff2'),
+        url('./components/fonts/kgallofthestars-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .modal {
@@ -53,6 +53,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  border-style: double ;
+  border-width: 10px;
+  border-color:#03cea4;
 
 }
 
@@ -65,7 +68,6 @@
 .modal-footer {
   padding: 10px;
 }
-
 
 .play-button {
   box-sizing: border-box;
@@ -90,14 +92,10 @@
   background-size: 400%;
   transition: background 300ms ease-in-out;
 }
-  .play-button:hover {
-    background-position: 0;
-  }
-
 
 .play-button:hover {
-  background-color: thistle;
-}
+  background-position: 0;
+ }
 
 body {
   background-color: #345995;
@@ -135,6 +133,10 @@ li a:hover {
   cursor: pointer;
 }
 
+.card-flip {
+  cursor: pointer;
+}
+
 .flip-card {
   background-color: transparent;
   width: 300px;
@@ -159,26 +161,26 @@ li a:hover {
 }
 
 .card-front{
-background-color: #f4b333;
-font-family: 'kg_neatly_printed_spacedRg' ;
-font-size: 25px;
-width: 200px;
-height: 200px;
-flex-direction: column;
-align-items: center;
-text-align: center;
-margin: 30px;
-padding: 30px;
-border-radius: 200px;
+  background-color: #f4b333;
+  font-family: 'kg_neatly_printed_spacedRg' ;
+  font-size: 25px;
+  width: 200px;
+  height: 200px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 200px;
 }
 
-.card-back{
-background-color: #03cea4;
-width: 200px;
-height: 200px;
-margin: 30px;
-padding: 30px;
-border-radius: 200px;
+.card-back {
+  background-color: #03cea4;
+  width: 200px;
+  height: 200px;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 200px;
 }
 
 .card-front h1 {
