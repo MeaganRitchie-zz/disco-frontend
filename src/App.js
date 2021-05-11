@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from "react"
+import CardContainer from "./components/CardContainer"
+import NavBar from "./components/NavBar"
+import SigninModal from './components/SigninModal';
 
 function App() {
+
+  const [show, setShow] = useState(true)
+
+  const showModal = () => {
+    setShow(true)
+  }
+  const closeModal = () => {
+    setShow(false)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SigninModal onClick={closeModal} show={show} />
+      <NavBar />
+      <CardContainer />
     </div>
   );
 }

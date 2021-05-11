@@ -1,38 +1,191 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'stay_homeregular';
+    src: url("./components/fonts/stay_home-webfont.woff") format("woff"),
+    url("./components/fonts/stay_home-webfont.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'kg_neatly_printed_spacedRg';
+    src: url('./components/fonts/kgneatlyprintedspaced-webfont.woff2') format('woff2'),
+         url('./components/fonts/kgneatlyprintedspaced-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: 'kg_summer_sunshine_shadowRg';
+    src: url('./components/fonts/kgsummersunshineshadow-webfont.woff2') format('woff2'),
+         url('./components/fonts/kgsummersunshineshadow-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@font-face {
+    font-family: 'kg_all_of_the_starsregular';
+    src: url('./components/fonts/kgallofthestars-webfont.woff2') format('woff2'),
+         url('./components/fonts/kgallofthestars-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fb4d3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  
+}
+
+.modal-content {
+  width: 600px;
+  height: 300px;
+  background-color: #f4b333;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+.modal-body {
+  font-family:'kg_neatly_printed_spacedRg';
+  font-size: 30px;
+  margin-top: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.modal-footer {
+  padding: 10px;
+}
+
+
+.play-button {
+  box-sizing: border-box;
+  background-color: #03cea4;
+  border: 2px; 
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  line-height: 1;
+  margin: 20px;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'kg_summer_sunshine_shadowRg';
+  border-color: yellowgreen;
+  font-size: 50px;
+  color: #fff;
+  background-image: linear-gradient(45deg, yellowgreen 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+  .play-button:hover {
+    background-position: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.play-button:hover {
+  background-color: thistle;
+}
+
+body {
+  background-color: #345995;
+}
+
+.nav-bar {
+  background-color: #fb4d3d;
+  margin: 0;
+}
+
+.logo {
+  height: 90px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.links {
+  display: inline-flex;
+  float: right;
+  list-style-type: none;
+}
+
+.links li {
+  float:right;
+  color: snow;
+  padding: 18px;
+  margin-left: 30px;
+  font-size: 30px;
+  display: block;
+  font-family: "kg_summer_sunshine_shadowRg";
+}
+
+li a:hover {
+  font-size: larger;
+  cursor: pointer;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 900px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.card-front .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.card-back .card-back:hover {
+  cursor: pointer;
+}
+
+.card-front{
+background-color: #f4b333;
+font-family: 'kg_neatly_printed_spacedRg' ;
+font-size: 25px;
+width: 200px;
+height: 200px;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin: 30px;
+padding: 30px;
+border-radius: 200px;
+}
+
+.card-back{
+background-color: #03cea4;
+width: 200px;
+height: 200px;
+margin: 30px;
+padding: 30px;
+border-radius: 200px;
+}
+
+.card-front h1 {
+  margin-bottom: 3px;
+}
+
+.card-front img {
+  max-width: 60%;
+  max-height: 60%; 
 }
