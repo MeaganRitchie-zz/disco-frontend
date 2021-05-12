@@ -15,7 +15,7 @@ export default function CardContainer(props) {
         <ReactCardFlip isFlipped={isFlipped} flipDirection="vertical">
           <CardBack handleClick={handleClick} >
           </CardBack>
-          <CardFront card={props.card} handleClick={handleClick} >
+          <CardFront letter={props.letter} url={props.url} handleClick={handleClick} >
           </CardFront>
         </ReactCardFlip>
       </div>

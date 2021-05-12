@@ -1,36 +1,38 @@
 import './App.css';
 import { useState, useEffect } from "react"
-import CardContainer from "./components/CardContainer"
-import NavBar from "./components/NavBar"
-import SigninModal from './components/SigninModal';
+import SigninModal from './components/SigninModal'
+import Game2 from './components/Game2'
+import { Route } from 'react-router-dom'
+import CardContainer from './components/CardContainer'
 
 function App() {
 
   const [show, setShow] = useState(true)
-  const [cards, setCards] = useState([])
 
-  useEffect(() => {
-    fetch('http://localhost:9393/cards')
-      .then(response => response.json())
-      .then(apiCards => setCards(apiCards))
-  }, [])
-
-  const makeCards = () => {
-    return cards.map(card => {
-      return <CardContainer
-        card={card}
-      />
-    })
-  }
   const closeModal = () => setShow(false)
+
+  const login = (username) => {
+    fetch('http://localhost:9393/login/', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        username
+      })
+    }
+    )
+  }
 
   return (
     <div className="App">
-      <SigninModal onClick={closeModal} show={show} />
-      <NavBar />
-      {makeCards()}
+      <Route exact path='/'>
+        <SigninModal login={login} onClick={closeModal} setShow={setShow} show={show} />
+      </Route>
+      <Route path='/leveltwo'>
+        <Game2 />
+      </Route>
     </div>
   );
 }
-
 export default App;
