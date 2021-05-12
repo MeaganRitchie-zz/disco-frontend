@@ -36,7 +36,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: #fb4d3d;
+  background-image: url('./images/Drawing-1.sketchpad.jpeg');
+  background-size: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +60,9 @@
 }
 .modal h4 {
   position: fixed;
-  top: 50px;
+  top:0;
+  font-size: 50px;
+  font-family: 'kg_neatly_printed_spacedRg';
 
 }
 .modal-body {
@@ -73,15 +76,27 @@
   padding: 10px;
 }
 .name-input {
-  border: none;
+  border-style: solid;
+  border-color: white;
   height: 35px;
+  width: 100px;
   border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  box-shadow: 1px 1px 3px black;
+}
+.name-input:hover {
+  border-style: solid;
+  border-color: #fb4d3d;
+  border-width: 3px;
 }
 .play-button {
   box-sizing: border-box;
-  background-color: #03cea4;
+  background-color: yellowgreen;
   border: 2px; 
   border-radius: 0.6em;
+  box-shadow: 0 10px rgb(132, 177, 42);
   cursor: pointer;
   align-self: center;
   line-height: 1;
@@ -93,10 +108,15 @@
   font-family: 'kg_summer_sunshine_shadowRg';
   font-size: 50px;
   color: #fff;
-  background-image: linear-gradient(45deg, yellowgreen 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #03cea4 50%, transparent 50%);
   background-position: 100%;
   background-size: 400%;
-  transition: background 300ms ease-in-out;
+  transition: 500ms ease-in-out;
+}
+
+.play-button:active{
+  box-shadow: 0 5px ;
+  transform: translateY(5px);
 }
 
 .play-button:visited {

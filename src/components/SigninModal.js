@@ -24,9 +24,9 @@ export default function SigninModal(props) {
           <div className="modal-content">
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
-                <input className="name-input" type="text" name="username" value={username} onChange={handleChange} />
+                <input className="name-input" placeholder="NAME" type="text" name="username" value={username} onChange={handleChange} />
                 <div className="modal-footer">
-                  <Link to="/leveltwo" path><input placeholder="NAME" type="submit" value="play" className="play-button" /> </Link>
+                  <Link to="/leveltwo" path><input type="submit" value="play" className="play-button" /> </Link>
                 </div>
               </form>
             </div>
