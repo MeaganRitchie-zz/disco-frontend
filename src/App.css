@@ -2,7 +2,7 @@
   font-family: 'stay_homeregular';
   src: url("./components/fonts/stay_home-webfont.woff") format("woff"),
   url("./components/fonts/stay_home-webfont.woff2") format("woff2");
-  font-weight: normal;
+  font-weight: 100, 200, 300, 400, 500, 600, 700;
   font-style: normal;
 }
 
@@ -30,6 +30,8 @@
   font-style: normal;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Titan+One&display=swap");
+
 .modal {
   position: fixed;
   left: 0;
@@ -39,9 +41,57 @@
   background-image: url('./images/Drawing-1.sketchpad.jpeg');
   background-size: 100%;
   display: flex;
-  align-items: center;
+  /* align-items:; */
   justify-content: center;
   z-index: 3;
+}
+
+.modal .wrapper {
+  position: fixed;
+  top: 20px;
+}
+
+.wrapper span{
+  -webkit-text-stroke-width: 1.25;
+  -webkit-text-stroke-color: white;
+  font-size: 100px;
+  text-shadow: 0 0px #f3c623, 0 0px #f2aaaa;
+  transform: translate(0, 100%) rotate(4deg);
+  animation: jump 1.5s ease-in-out;
+  display: inline-block;
+  font-family: "Titan One", cursive;
+  color: white;
+}
+.wrapper span:nth-child(1) {
+  animation-delay: 120ms;
+}
+.wrapper span:nth-child(2) {
+  animation-delay: 240ms;
+}
+.wrapper span:nth-child(3) {
+  animation-delay: 360ms;
+}
+.wrapper span:nth-child(4) {
+  animation-delay: 480ms;
+}
+.wrapper span:nth-child(5) {
+  animation-delay: 600ms;
+}
+.wrapper span:nth-child(6) {
+  animation-delay: 720ms;
+}
+
+@keyframes jump {
+  33% {
+    text-shadow: 0 60px #f37121, 0 100px #f2aaaa;
+  }
+  50% {
+    transform: translate(0, 0) rotate(-4deg);
+    text-shadow: 0 0px #8fc0a9, 0 0px #84a9ac;
+  }
+  66.67% {
+    text-shadow: 0 -60px #d54062, 0 -100px #8fc0a9;
+  }
 }
 
 .modal-content {
@@ -56,15 +106,9 @@
   border-style: solid;
   border-width: 10px;
   border-color: #03cea4;
-
+  margin-top: 300px;
 }
-.modal h4 {
-  position: fixed;
-  top:0;
-  font-size: 50px;
-  font-family: 'kg_neatly_printed_spacedRg';
 
-}
 .modal-body {
   font-family:'kg_neatly_printed_spacedRg';
   font-size: 30px;
@@ -115,7 +159,7 @@
 }
 
 .play-button:active{
-  box-shadow: 0 5px ;
+  box-shadow: 0 5px rgb(132, 177, 42);
   transform: translateY(5px);
 }
 
@@ -155,10 +199,10 @@ body {
   font-size: 30px;
   display: block;
   font-family: "kg_summer_sunshine_shadowRg";
+  text-decoration: none;
 }
 
 li a:hover {
-  font-size: larger;
   cursor: pointer;
 }
 
@@ -167,7 +211,16 @@ li a:hover {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
-  width: 100%;
+  width: 650px;
+  margin: auto;
+}
+
+.welcome-message {
+color:yellow;
+font-size: 50px;
+font-weight: 300;
+font-family:'kg_neatly_printed_spacedRg';
+
 }
 
 .card-flip {
@@ -192,7 +245,7 @@ li a:hover {
   position: absolute;
   width: 100%;
   height: 100%;
- 
+  
 }
 .card-back .card-back:hover {
   cursor: pointer;
@@ -202,26 +255,50 @@ li a:hover {
   background-color: #f4b333;
   font-family: 'kg_neatly_printed_spacedRg' ;
   font-size: 15px;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin: 10px;
   padding: 10px;
   border-radius: 200px;
+  box-shadow: 1px 1px 2px black;
 }
 
 .card-back {
   background-color: #03cea4;
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   margin: 10px;
   padding: 10px;
   border-radius: 200px;
+  box-shadow: 1px 1px 2px black;
 }
 
-.card-front img {
-  max-width: 30%;
-  max-height: 30%; 
+.card-back:hover {
+ box-shadow: 3px 3px 5px black;
+}
+
+.card-details p {
+  padding-top: 10px;
+  font-size: 100px;
+  margin: auto;
+  -webkit-text-stroke-color: white;
+  font-family: "kg_neatly_printed_spacedRg", cursive;
+  color: white;
+}
+.card-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-details img {
+  margin-top: 20px;
+  max-width: 75%;
+  max-height: 75%; 
+}
+
+.hide {
+  z-index: -5;
 }

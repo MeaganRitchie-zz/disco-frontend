@@ -11,7 +11,9 @@ export default function CardFront(props) {
 
   return (
     <div className="card-front" onClick={props.handleClick}>
-      {props.letter ? displayLetter() : displayImage()}
+      <div className="card-details">
+        {props.letter ? displayLetter() : displayImage()}
+      </div>
     </div>
   )
 }

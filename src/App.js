@@ -2,14 +2,19 @@ import './App.css';
 import { useState, useEffect } from "react"
 import SigninModal from './components/SigninModal'
 import Game2 from './components/Game2'
+import Game1 from './components/Game1'
 import { Route } from 'react-router-dom'
-import CardContainer from './components/CardContainer'
+import Help from './components/Help'
 
 function App() {
+  const closeModal = () => setShow(false)
 
   const [show, setShow] = useState(true)
+  const [username, setUsername] = useState('')
 
-  const closeModal = () => setShow(false)
+  const handleChange = (event) => {
+    setUsername(event.target.value)
+  }
 
   const login = (username) => {
     fetch('http://localhost:9393/login/', {
@@ -22,15 +27,31 @@ function App() {
       })
     }
     )
+      .then(response => response.json())
+      .then(response => {
+        setUsername(response)
+      }
+      )
   }
 
   return (
     <div className="App">
       <Route exact path='/'>
-        <SigninModal login={login} onClick={closeModal} setShow={setShow} show={show} />
+        <SigninModal handleChange={handleChange}
+          username={username}
+          login={login}
+          onClick={closeModal}
+          setShow={setShow}
+          show={show} />
       </Route>
       <Route path='/leveltwo'>
-        <Game2 />
+        <Game2 username={username} />
+      </Route>
+      <Route path='/help'>
+        <Help />
+      </Route>
+      <Route path='/levelone'>
+        <Game1 />
       </Route>
     </div>
   );
