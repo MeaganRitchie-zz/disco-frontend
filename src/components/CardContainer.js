@@ -27,7 +27,6 @@ export default function CardContainer(props) {
     }
   }
 
-
   return (
     <div className="card-flip">
       <div className="card-flip-inner">

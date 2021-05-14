@@ -45,13 +45,30 @@
   justify-content: center;
   z-index: 3;
 }
+.modal-end {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+}
 
 .modal .wrapper {
   position: fixed;
   top: 20px;
 }
 
-.wrapper span{
+.wrapper-end {
+  position: fixed;
+  align-self: center;
+}
+
+.wrapper span, .wrapper-end span{
   -webkit-text-stroke-width: 1.25;
   -webkit-text-stroke-color: white;
   font-size: 100px;
@@ -108,10 +125,25 @@
   border-color: #03cea4;
   margin-top: 300px;
 }
+.modal-content-end {
+  width: 600px;
+  height: 300px;
+  background-color: #f4b333;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #03cea4;
+  margin-top: 170px;
+}
 
 .modal-body {
   font-family:'kg_neatly_printed_spacedRg';
   font-size: 30px;
+  align-self: center;
   margin-top: 50px;
 }
 
@@ -119,6 +151,7 @@
   margin-top: 60px;
   padding: 10px;
 }
+
 .name-input {
   border-style: solid;
   border-color: white;
@@ -172,6 +205,7 @@
 
 body {
   background-color: #345995;
+  margin: 0;
 }
 
 .nav-bar {
@@ -206,6 +240,50 @@ li a:hover {
   cursor: pointer;
 }
 
+.help-page {
+  display:flex;
+  flex-direction: column;
+  font-family: 'kg_neatly_printed_spacedRg' ;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-page h1 {
+  text-align: center;
+  font-size: 30px;
+  color: #03cea4;
+}
+
+.help-page p{
+  font-size: 25px;
+  color: snow;
+}
+
+.gif {
+  max-width: 60%;
+}
+
+.help-page-button, .end-page-button{
+  align-self: flex-end;
+  box-sizing: border-box;
+  background-color: yellowgreen;
+  border: 2px; 
+  border-radius: 50px;
+  box-shadow: 0 5px rgb(132, 177, 42);
+  cursor: pointer;
+  line-height: 1;
+  margin: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'kg_summer_sunshine_shadowRg';
+  font-size: 20px;
+  color: #fff;
+  background-image: linear-gradient(45deg, #03cea4 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: 500ms ease-in-out;
+}
+
 .game-board {
   display: flex;
   flex-wrap: wrap;
@@ -220,7 +298,15 @@ color:yellow;
 font-size: 50px;
 font-weight: 300;
 font-family:'kg_neatly_printed_spacedRg';
+}
+.highscore-title {
+  font-size: 20px;
+  font-family:'kg_neatly_printed_spacedRg' ;
+}
 
+.highscore-number{
+  font-size: 20px;
+  font-family:'kg_neatly_printed_spacedRg' ;
 }
 
 .card-flip {
@@ -264,7 +350,9 @@ font-family:'kg_neatly_printed_spacedRg';
   padding: 10px;
   border-radius: 200px;
   box-shadow: 1px 1px 2px black;
+  cursor: pointer;
 }
+
 
 .card-back {
   background-color: #03cea4;

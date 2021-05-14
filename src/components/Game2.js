@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import CardContainer from './CardContainer'
+import EndGame from './EndGame'
 
 export default function Game2(props) {
 
@@ -9,11 +10,14 @@ export default function Game2(props) {
   const [numberOfMatches, setNumberOfMatches] = useState([])
   const [currentLetter, setCurrentLetter] = useState([])
   const [clickedLetters, setClickedLetters] = useState([])
+  const [endGame, setEndGame] = useState(false)
 
   useEffect(() => {
     fetch('http://localhost:9393/cards')
       .then(response => response.json())
-      .then(apiCards => setCards(apiCards))
+      .then(apiCards => {
+        setCards(shuffleCards(apiCards))
+      })
   }, [])
 
   useEffect(() => {
@@ -29,14 +33,23 @@ export default function Game2(props) {
   }, [clickedLetters])
 
   useEffect(() => {
-    if (cards.length > 0 && numberOfMatches === cards.length) {
-      setTimeout(() => alert('You Win'), 200)
+    if (cards.length > 0 && numberOfMatches.length === cards.length) {
+      setEndGame(true)
     }
   }, [numberOfMatches])
 
   const addClickedLetter = (letter) => {
     setClickedLetters([...clickedLetters, letter])
     setCurrentLetter(letter)
+  }
+
+  const shuffleCards = (notMixedCards) => {
+    let mixedCards = []
+    while (notMixedCards.length > 0) {
+      let i = Math.floor(Math.random() * (notMixedCards.length))
+      mixedCards.push(notMixedCards.splice(i, 1)[0])
+    }
+    return mixedCards
   }
 
   const makeLetterCards = () => {
@@ -65,10 +78,13 @@ export default function Game2(props) {
     <div>
       <NavBar />
       <div className="welcome-message"> Hi, {props.username}!</div>
+      <h2 className="highscore-title"></h2>
+      <p className="highscore-number"></p>
       <div className="game-board">
         {makeLetterCards()}
         {makeImageCards()}
       </div>
-    </div>
+      <EndGame endGame={endGame} setEndGame={setEndGame} />
+    </div >
   )
 }

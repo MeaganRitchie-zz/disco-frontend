@@ -7,7 +7,6 @@ export default function NavBar() {
     <div className="nav-bar">
       <img className="logo" alt="sunshine" src={sun}></img>
       <ul className="links">
-        <li><Link to="/" style={{ textDecoration: 'none', color: '#fffafa' }}> MENU </Link> </li>
         <li><Link to="/help" style={{ textDecoration: 'none', color: '#fffafa' }}> HELP </Link> </li>
         <li><Link to="/" style={{ textDecoration: 'none', color: '#fffafa' }}> EXIT </Link> </li>
       </ul>

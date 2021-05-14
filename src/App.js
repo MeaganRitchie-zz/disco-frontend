@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import SigninModal from './components/SigninModal'
 import Game2 from './components/Game2'
 import Game1 from './components/Game1'
@@ -11,6 +11,7 @@ function App() {
 
   const [show, setShow] = useState(true)
   const [username, setUsername] = useState('')
+
 
   const handleChange = (event) => {
     setUsername(event.target.value)
