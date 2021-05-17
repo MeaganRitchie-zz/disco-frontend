@@ -31,7 +31,8 @@ export default function SigninModal(props) {
                   value={props.username}
                   onChange={props.handleChange} />
                 <div className="modal-footer">
-                  <Link to="/leveltwo" path><input type="submit" value="play" className="play-button" /> </Link>
+                  <Link style={{ textDecoration: 'none' }} to="/levelone" path><input type="submit" value="easy" className="play-button" /> </Link>
+                  <Link style={{ textDecoration: 'none' }} to="/leveltwo" path><input type="submit" value="hard" className="play-button" /> </Link>
                 </div>
               </form>
             </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import LevelOneCards from './LevelOneCards'
 import EndGame from './EndGame'
+import { Link } from 'react-router-dom'
 
 export default function Game1(props) {
 
@@ -69,11 +70,15 @@ export default function Game1(props) {
     <div>
       <NavBar />
       <div className="welcome-message"> Hi, {props.username}!</div>
+      <div className="too-easy-container">
+        <p className="too-easy">Too easy?</p><br></br>
+        <Link style={{ textDecoration: 'none' }} to="/leveltwo"><button className="go-to-level-2"> Try Level 2!</button> </Link>
+      </div>
       <div className="game-board">
         {makeLetterCards()}
         {makeImageCards()}
         <EndGame endGame={endGame} setEndGame={setEndGame} />
       </div>
-    </div>
+    </div >
   )
 }

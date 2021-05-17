@@ -52,7 +52,7 @@ function App() {
         <Help />
       </Route>
       <Route path='/levelone'>
-        <Game1 />
+        <Game1 username={username} />
       </Route>
     </div>
   );
